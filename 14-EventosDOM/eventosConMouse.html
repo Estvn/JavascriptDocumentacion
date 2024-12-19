@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="tituloPrincipal">Manejo del DOM con JavaScript</h1>
+
+    <script>
+        //document.getElementById("tituloPrincipal").onmouseover = cambiarColorLetra;
+        //document.getElementById("tituloPrincipal").onmouseout = revertirColorLetra;
+        document.getElementById("tituloPrincipal").onmousedown = cambiarColorLetra;
+        document.getElementById("tituloPrincipal").onmouseup = revertirColorLetra;
+        let titulo = document.getElementById("tituloPrincipal");
+
+        function cambiarColorLetra(){
+            titulo.style.color = "red";
+        }
+
+        function revertirColorLetra(){
+            titulo.style.color = "black"
+        }
+
+
+    </script>
+</body>
+</html>

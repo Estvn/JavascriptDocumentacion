@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="idPrincipal">Título Original</h1>
+    <button onclick="mostrar()">Mostrar</button>
+    <div id="nvoId"></div>
+
+    <script>
+
+        // Se está asignando un evento al elemento, a la vez que se asigna 
+        // una función tipo callback al evento.
+        document.getElementById("idPrincipal").onclick = cambiarTitulo;
+
+        function cambiarTitulo(){
+            let arr = ['titulo uno','titulo dos'];
+            let titulo = document.getElementById('idPrincipal');
+            let div = document.getElementById("nvoId");
+
+            if(titulo.innerHTML == arr[1]){
+                titulo.innerHTML = arr[0];
+                div.innerHTML = arr[0];
+            }else{
+                titulo.innerHTML = arr[1];
+                div.innerHTML = arr[1];
+            }
+
+        }
+
+    </script>
+</body>
+</html>

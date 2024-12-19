@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="estiven.mejia@unah.hn">
+    <meta name="version" content="0.1.0">
+    <meta name="date" content="2023/10/12">
+    <meta name="description" content="Creación de un formulario en la web">
+    <title>Formulario en la Web</title>
+</head>
+<body>
+    <form id="form1">
+        Nombre: <input type="text" name="nombre" value="nombre"><br>
+        Apellido: <input type="text" name="apellido"><br>
+        Edad: <input type="number" name="edad">
+    </form>
+    <button onclick="mostrarValores()">Mostrar</button>
+    <div id="valores"></div>
+
+    <script>
+        function mostrarValores(){
+            let form = document.forms['form1'];
+            let text='';
+            /*
+            for(let element of form){
+                text += element.value + '<br>';
+            }*/
+            let nombre = form['nombre'];
+            let apellido = form['apellido'];
+            let edad = form['edad'];
+            text = `${nombre.value}<br> ${apellido.value}<br> ${edad.value}`;
+            document.getElementById('valores').innerHTML = text;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="tituloPrincipal">Título Principal</h1>
+
+    Nombre: <input type="text" onfocus="cambiar(this)" onblur="regresar(this)">
+    Apellido: <input type="text" onfocus="cambiar(this)" onblur="regresar(this)">
+
+    <script>
+        let input = document.getElementById
+
+        function cambiar(elementoInput){
+            elementoInput.style.background = "grey";
+        }
+
+        function regresar(elementoInput){
+            elementoInput.style.background = "white";
+        }
+
+    </script>
+</body>
+</html>

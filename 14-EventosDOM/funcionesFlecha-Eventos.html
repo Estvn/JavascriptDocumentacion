@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="tituloPrincipal">Título Principal</h1>
+
+    Nombre: <input type="text" id="nombre">
+    Apellido: <input type="text" id="apellido">
+
+    <script>
+        //Si las funciones no se van a reutilizar, es conveniente usar funciones flecha.
+        document.getElementById('nombre').addEventListener("focus", (evento)=>{
+            evento.target.style.borderColor = "red"
+        });
+        document.getElementById('nombre').addEventListener('blur', (evento)=>{
+            evento.target.style.borderColor = "white";
+        });
+
+        document.getElementById('apellido').addEventListener("focus", (evento)=>{
+            evento.target.style.borderColor = "red";
+        });
+        document.getElementById('apellido').addEventListener('blur', (evento)=>{
+            evento.target.style.borderColor = "white";
+        });
+
+    </script>
+</body>
+</html>

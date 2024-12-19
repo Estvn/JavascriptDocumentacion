@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "UTF-8">
+        <title>Modificando elementos del DOM</title>
+    </head>
+    <body>
+        <h1 id="titulo">Este contenido se sobreescribirá al hacer click al botón</h1>
+        <p>El botón llama a una funcion que tiene unn mensaje con document.write()</p>
+        <p>El método document.write() sobreescribe todos los elementos de una página para mostrar su mensaje.</p>
+        <button onclick="mostrarMensaje()">Sobreescribir el contenido</button><br>
+        <button onclick="changeTitle()">Cambiar el Título y su color</button><br>
+        <img id="imagen" src="POO1.jpg"><br>
+        <button onclick="changeImage()">Cambiar imágen</button>
+
+        <script>
+            //document.write("Bievenido")
+
+            function mostrarMensaje(){
+                document.write("<strong>Se ha sobreescrito todo el contenido de la página.</strong>");
+            }
+
+            //Cambiando el contenido del DOM
+            //Cambiando el estilo de un elemento
+            function changeTitle(){
+                let element = document.getElementById("titulo");
+                element.innerHTML = "Se ha cambiado el título principal tomando su identificador y sobreescribiendolo.";
+                element.style.color = "grey";
+            }
+
+            //Cambiando los atributos de un elemento
+            function changeImage(){
+            let imagen = document.getElementById('imagen');
+            imagen.src = "nebula-en-el-espacio_3840x1920_xtrafondos.com.jpg";
+            imagen.style.width = "600px";
+            imagen.style.height = "300px";
+        }
+        </script>
+    </body>
+</html>

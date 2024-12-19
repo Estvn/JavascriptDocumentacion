@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 onclick="cambiarTexto(this)">Título Original</h1>
+    <button onclick="mostrar()">Mostrar</button>
+
+    <script>
+
+        function mostrar(){
+        }
+
+        function cambiarTexto(titulo){
+            let arr = ["texto uno", "texto dos"];
+
+            if(titulo.innerHTML == arr[0]){
+                titulo.innerHTML = arr[1];
+            }else{
+                titulo.innerHTML = arr[0];
+            }
+        
+        }
+
+    </script>
+</body>
+</html>

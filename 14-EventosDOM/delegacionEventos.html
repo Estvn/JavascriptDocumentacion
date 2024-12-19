@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="tituloPrincipal">Título Principal</h1>
+
+    <form id="forma">
+        Nombre: <input type="text" id="nombre">
+        Apellido: <input type="text" id="apellido">
+    </form>
+
+    <script>
+        let form = document.getElementById('forma');
+
+        form.addEventListener("focus", (evento)=>{
+            evento.target.style.borderColor = "red"
+        }, true);
+        form.addEventListener('blur', (evento)=>{
+            evento.target.style.borderColor = "white";
+        }, true);
+    </script>
+</body>
+</html>

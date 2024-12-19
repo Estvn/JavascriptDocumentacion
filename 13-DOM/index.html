@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "UTF-8">
+        <meta>
+        <title>Ejemplo de DOM con Javascript</title>
+        <style>
+            .red{
+                color: red; text-decoration: underline;
+            }
+        </style>
+    </head>
+    <body> 
+        <h1 id="titulo" class="red">Ejemplo de DOM con JS</h1>
+        <p id="parrafo1">Este texto está contenido dentro de una etiqueta de párrafo.</p>
+        <p id="parrafo2">Este es el segundo párrafo.</p>
+        <p id="parrafo3">Este es el trecer párrafo.</p>
+        <p class = 'red'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis dolores rem modi mollitia, deleniti et quia a veritatis repudiandae sit itaque, fugit nisi possimus aliquid? Facere, impedit. Sed, incidunt recusandae!</p>
+        <p class = 'red'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus magni obcaecati eaque natus? Voluptas, aliquam explicabo nihil quo eos saepe, quis quia laudantium sed excepturi labore doloremque ea accusamus dolorem.</p>
+
+        <p class="clase">Párrafo uno que comparte una clase</p>
+        <p class="clase">Párrafo dos que comparte una clase</p>
+        <p class="clase">Párrafo tres que comparte una clase</p>
+        <p class="clase">Párrafo cuatro que comparte una clase</p>
+        <h2 class = "clase">Este título comparte una clase con los párrafos.</h2>
+        <script>
+
+            //Haciendo uso de getElementById
+            let title = document.getElementById('titulo');
+            console.log(`El texo del título es: ${title.innerHTML}`);
+            title.innerHTML = 'Ejercicio de modificación del DOM desde JS';
+
+            //Se debe tomar todo el elemento dentro de la variable.
+            //Si se desea hacer una modificación en el elemento se llama la variable especificando la parte que se desea modificar.
+            let paragraph = document.getElementById('parrafo1');
+            console.log(`El texto del primer párrafo es: ${paragraph.innerHTML}`);
+            paragraph.innerHTML = 'Nuevo valor del primer párrafo';
+            console.log(`El nuevo texto del primer párrafo es: ${paragraph.innerHTML}`);
+
+            //Haciendo uso de get.ElementsByTagName
+            let parrafos = document.getElementsByTagName('p');
+            for(let i=0; i<parrafos.length; i++){
+                //parrafos[i].innerHTML = `${i+1}_Nuevo texto para los párrafos.`;
+                parrafos[i].innerHTML = `${i+1}. ` + parrafos[i].innerHTML;
+            }
+            console.log(`La cantidad de párrafos en el DOM es: ${parrafos.length}`);
+
+            //Haciendo uso de getElementByClassName
+            let elementsWithClassRed = document.getElementsByClassName('red');
+            
+            /*for(let i=0; i<elementsWithClassRed.length; i++){
+                elementsWithClassRed[i].innerHTML = `${i+1}. ` + elementsWithClassRed[i].innerHTML;
+            }*/
+            //"for of" toma todos los objetos que hay en una variable.
+            //"for in" toma todos los atributos que hay en un objeto.
+            var i = 0;
+            for(element of elementsWithClassRed){
+                element.innerHTML = `${i}. ` + element.innerHTML;
+                i++;
+            }
+            console.log(`La cantidad de elementos con la clase "rojo" en el DOM es: ${elementsWithClassRed.length}`)
+
+            var x = 0;
+            let classParagraphs = document.querySelectorAll('p.clase');
+            console.log(classParagraphs.length);
+            for(paragraphs of classParagraphs){
+                paragraphs.innerHTML = `${x}. ` +  paragraphs.innerHTML;
+                x ++;
+            }
+
+            console.log('Esto es un texto envíado desde Javascript')
+
+            let parrr = document.getElementById("parrafo1");
+            console.log(`El texto delp primer parrafo es ${parrr.innerHTML}`)
+            parrr.innerHTML = "Un texto random"
+
+        </script>
+    </body>
+</html>

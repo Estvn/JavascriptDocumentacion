@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="cargarPagina()">
+    <h1>Título principal de la página</h1>
+
+    <script>
+        function cargarPagina(){
+            alert('Entrando a la páginna web.');
+
+            if(navigator.cookieEnabled){
+                document.write("La cookies están habilitadas.");
+            }
+        }
+    </script>
+    
+</body>
+</html>
